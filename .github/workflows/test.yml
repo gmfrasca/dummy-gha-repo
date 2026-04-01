@@ -9,6 +9,8 @@ jobs:
     name: Top Secret test
     steps:
       - name: Check Secret
-        if: ${{ secrets.FOO_SECRET != '' }}
+        env:
+          TOP_SECRET: ${{ secrets.FOO_SECRET }}
+        if: ${{ env.TOP_SECRET != '' }}
         run:
           echo ${{ secrets.FOO_SECRET }}
