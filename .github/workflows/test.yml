@@ -9,6 +9,6 @@ jobs:
     name: Top Secret test
     steps:
       - name: Check Secret
-        if ${{ secrets.FOO_SECRET != '' }}
+        if: ${{ secrets.FOO_SECRET != '' }}
         run:
           echo ${{ secrets.FOO_SECRET }}
