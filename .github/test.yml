@@ -1,0 +1,14 @@
+name: Top Secret Test
+
+on:
+  workflow_dispatch:
+jobs:
+  top-secret-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    name: Top Secret test
+    steps:
+      - name: Check Secret
+        if ${{ secrets.FOO_SECRET != '' }}
+        run:
+          echo ${{ secrets.FOO_SECRET }}
